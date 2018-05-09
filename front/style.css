@@ -1,0 +1,71 @@
+
+/* HOME VIEW */
+
+.background{
+    height: 100vh;
+    background-image: url("/docs/bg-1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (max-width: 600px) {
+    .background {
+        background-image: url("/docs/bg-2.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+  }
+
+h4.home-text{
+    color: white;
+    text-align: center;
+    font-weight: lighter;
+    font-size: 3vw;
+    max-width: 100%;
+    margin-bottom: 30px;
+
+}
+
+img.logo-JP{
+    max-width: 100%;
+    height: 300px;
+}
+
+button.buy-button{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    color:white;
+    background-color: transparent;
+    border: 1px solid white;
+    border-radius: 3px;
+    box-shadow: 3px 3px 20px black;
+    font-weight: lighter;
+}
+
+/* NAVBAR */
+
+nav{
+    box-shadow: 5px 5px 20px black;
+}
+
+/* FOOTER */
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #343A40;
+    overflow: hidden;
+}
+
+p.copyright{
+    color:white;
+    font-weight: lighter;
+}
+
+div.collapse{
+    color:white:
+}
