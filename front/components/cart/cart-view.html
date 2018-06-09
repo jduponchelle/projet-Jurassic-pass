@@ -1,0 +1,29 @@
+<section class="cart container-fluid">
+    <div class="row">
+        <h1 class="col-12">Your Jurassic cart</h1>
+        <hr>
+        <div class="container-fluid myCart col-12">
+            <div class="row" ng-repeat="product in myProduct">
+                <div class="col-4">
+                    <h3>Title</h3>
+                    <div class="col-12">{{product.title}}><hr>
+                    </div>
+                </div>
+                <div class="col-4">
+                    <h3>Price</h3>
+                    <div class="col-12">{{product.price | currency}}<hr></div>
+                </div>
+                <div class="col-4">
+                    <h3>Quantity</h3>
+                        <input class="col-8" type="number" ng-model="product.quantity">
+                        <hr>
+                </div>  
+            </div>
+            <div class="col-3 offset-9">
+                <h3>Order total</h3>
+                {{total() | currency}}
+            </div>
+            <button type="reset" ng-click="clearCart()" ng-if="myProduct.lenght != 0">Clear cart</button>
+        </div>
+    </div>
+</section>
