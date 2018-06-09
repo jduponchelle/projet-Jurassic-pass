@@ -7,53 +7,73 @@
     <title>Jurassic Park</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
-<body>
+<body ng-app="mainApp">
     <!-- NAVBAR -->
     <nav>
         <div class="collapse" id="navbarToggleExternalContent">
             <div class="bg-dark p-4">
-                <a href="" ><h4 class="navbar-item">The park</h4></a>
-                <a href="" ><h4 class="navbar-item">Tickets</h4></a>
-                <a href="" ><h4 class="navbar-item">Cart</h4></a>
+                <a ui-sref="home" ><h4 class="navbar-item">Home</h4></a>
+                <a ui-sref="thePark" ><h4 class="navbar-item">The park</h4></a>
+                <a ui-sref="tickets" ><h4 class="navbar-item">Tickets</h4></a>
+                <a ui-sref="cart" ><h4 class="navbar-item">Cart</h4></a>
+                <a ui-sref="login" ><h4 class="navbar-item">Login</h4></a>
+                <a ui-sref="register" ><h4 class="navbar-item">Register</h4></a>
             </div>
         </div>
             <nav class="navbar navbar-dark bg-dark">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <audio controls>
+                    <source src="/docs/07 - Welcome to Jurassic Park.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+                </audio>
+
             </nav>
     </nav>
 
     <!-- CONTENT -->
-<div ng-app="mainApp">
+<div>
     <ui-view></ui-view> 
 </div>
 
     <!-- FOOTER -->
-
-    <footer>
+<div class="container-fluid">
+    <footer class="col-12">
         <p class="copyright">&copy Universal Studios 2018</p>
     </footer>
+
+</div>
 
     <!-- SCRIPT -->
     
     <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     
 
     <!-- LIBRAIRIES EXTERNES -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-
-
+    <script src="./node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <script src="app.js"></script>
     <script src="app-controller.js"></script>
     <script src="config.js"></script>
     <script src="./components/home/home-view.html"></script>
     <script src="./components/home/home-controller.js"></script>
+    <script src="./components/tickets/tickets-view.html"></script>
+    <script src="./components/tickets/tickets-controller.js"></script>
+    <script src="./components/thePark/thePark-controller.js"></script>
+    <script src="./components/thePark/thePark-view.html"></script>
+    <script src="./components/cart/cart-controller.js"></script>
+    <script src="./components/cart/cart-view.html"></script>
+    <script src="./components/login/login-controller.js"></script>
+    <script src="./components/login/login-view.html"></script>
+    <script src="./components/register/register-controller.js"></script>
+    <script src="./components/register/register-view.html"></script>
     
 </body>
 </html>
