@@ -9,7 +9,7 @@ import product from './product-schema';
       console.log('Database OK')
     } else {
       product.create({
-        imagePath: '../../front/docs/pass-1.png',
+        imagePath: 'http://localhost:3000/docs/pass-1.png',
         title: '1 day pass',
         description: 'This pass alows you to enter Jurassic Park during an entire day.',
         price: 300
@@ -18,16 +18,16 @@ import product from './product-schema';
       });
 
       product.create({
-        imagePath: '../../front/docs/pass-2.png',
+        imagePath: 'http://localhost:3000/docs/pass-2.png',
         title: '2 days pass',
         description: 'This pass alows you to enter Jurassic Park during two entire days.',
         price: 594.99
       }, function (err, productList) {
-        if (err) return handleError(err);
+        if (err) return handleError(err); 
       });
 
       product.create({
-        imagePath: 'http://localhost:3000/projet-titre-pro/front/docs/pass-3.png',
+        imagePath: 'http://localhost:3000/docs/pass-3.png',
         title: '3 days pass',
         description: 'This pass alows you to enter Jurassic Park during three entire days.',
         price: 1184.99

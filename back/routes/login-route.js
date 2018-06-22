@@ -12,7 +12,7 @@ login.post('/login', (req, res) =>{
     if (req.body.username&&req.body.password){
         users.findOne({username: req.body.username}, (err, result)=>{
             if (result){
-                if(result.username===req.body.username){
+                if(result.username===req.body.username && result.password === req.body.password){
                     let token = jwt.sign({username: result.username, firstname: result.firstname, lastname: result.lastname}, secretkey);
                     res.status(200).send({
                         status: true,
