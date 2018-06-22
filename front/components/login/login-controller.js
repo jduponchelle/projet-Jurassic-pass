@@ -11,14 +11,25 @@ angular.module('mainApp').controller('loginController', function($scope, $http, 
 
         $http.post("http://localhost:1407/login", user).then(function (res) {
             let token = res.data.content;
-
             sessionStorage.setItem('token', token);
             $state.reload();
 
             if(token){
-                alert('token ok');
+                swal({
+                    title: "You are now logged in",
+                    icon: "success",
+                    timer: 3000
+                });
                 $state.go('cart');
+            }else{
+                console.log('acesse denied, wrong token')
             }
+        }).catch(function(error){
+            swal({
+                title:"Username or password invalid",
+                icon: "error",
+                timer: 3000
+            });
         });
     }
  

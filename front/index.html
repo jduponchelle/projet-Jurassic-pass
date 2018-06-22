@@ -7,32 +7,42 @@
     <title>Jurassic Park</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body ng-app="mainApp">
-    <!-- NAVBAR -->
-    <nav>
-        <div class="collapse" id="navbarToggleExternalContent">
-            <div class="bg-dark p-4">
-                <a ui-sref="home" ><h4 class="navbar-item">Home</h4></a>
-                <a ui-sref="thePark" ><h4 class="navbar-item">The park</h4></a>
-                <a ui-sref="tickets" ><h4 class="navbar-item">Tickets</h4></a>
-                <a ui-sref="cart" ><h4 class="navbar-item">Cart</h4></a>
-                <a ui-sref="login" ><h4 class="navbar-item">Login</h4></a>
-                <a ui-sref="register" ><h4 class="navbar-item">Register</h4></a>
-            </div>
-        </div>
-            <nav class="navbar navbar-dark bg-dark">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <audio controls>
-                    <source src="/docs/07 - Welcome to Jurassic Park.mp3" type="audio/mp3">
-                    Your browser does not support the audio element.
-                </audio>
+<nav class="navbar navbar-expand-sm bg-dark" ng-controller="appController">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"><img src="./docs/menu.png" alt=""></span>
+    </button>
+    <a class="navbar-brand" href="#"><img src="./docs/logo-jp-avec-ombre.png" style="max-width: 50px; height: auto;"></a>
+   
 
-            </nav>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="home">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="thePark">The park</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="tickets">Buy Tickets</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" ui-sref="cart">Cart</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="login">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" ui-sref="register">Register</a>
+                </li>
+            </ul>
+
+    </div>
+</nav>
 
     <!-- CONTENT -->
 <div>
@@ -47,18 +57,20 @@
 
 </div>
 
-    <!-- SCRIPT -->
+    <!-- External libs -->
     
     <script src="./node_modules/angular/angular.min.js"></script>
     <script src="./node_modules/@uirouter/angularjs/release/angular-ui-router.min.js"></script>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
-
-    <!-- LIBRAIRIES EXTERNES -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <script src="./node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="./node_modules/scrollreveal/dist/scrollreveal.min.js"></script>
+    
+
+    <!-- Script -->
+
     <script src="app.js"></script>
     <script src="app-controller.js"></script>
     <script src="config.js"></script>
@@ -74,6 +86,12 @@
     <script src="./components/login/login-view.html"></script>
     <script src="./components/register/register-controller.js"></script>
     <script src="./components/register/register-view.html"></script>
+    <script src="./components/checkout/checkout-controller.js"></script>
+    <script src="./components/checkout/checkout-view.html"></script>
+    <script src="./components/pass/pass-component.js"></script>
+    <script src="./components/pass/pass-view.html"></script>
+    <script src="./components/pass/pass-controller.js"></script>
+    <script src="./scroll-reveal.js"></script>
     
 </body>
 </html>

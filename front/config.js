@@ -37,6 +37,19 @@ angular.module('mainApp').config(function($stateProvider, $urlRouterProvider){
         controller: 'registerController'
       });
 
+      $stateProvider.state('checkout', {
+        url:'/checkout',
+        templateUrl: 'components/checkout/checkout-view.html',
+        controller: 'checkoutController',
+        resolve: {
+          security: ['$q', function($q){
+              if(!sessionStorage.token){
+                 return $q.reject("Not Authorized");
+              }
+          }]
+       }
+      });
+
 
 
       $urlRouterProvider.otherwise('/home');

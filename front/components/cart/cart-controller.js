@@ -4,6 +4,8 @@ angular.module('mainApp').controller('cartController', function ($scope, $http, 
     console.log(myProduct);
     $scope.myProduct = myProduct;
     $scope.clearCart = _clearCart;
+    $scope.checkout = checkout;
+
 
 
     $scope.total = function () {
@@ -52,6 +54,19 @@ angular.module('mainApp').controller('cartController', function ($scope, $http, 
             }
           });
     };
+
+    function checkout(){
+        
+        if (myProduct.length === 0){
+            swal({
+                title : "your cart is empty",
+                icon: "info",
+                timer: 3000
+            })
+        }else{
+            $state.go('checkout');
+        }
+    }
 
 
 });

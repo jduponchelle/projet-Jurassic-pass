@@ -8,7 +8,7 @@ angular.module('mainApp').controller('registerController', function ($scope, $ht
             username: $scope.username,
             password: $scope.password,
         };
-        $http.post("http://localhost:1407/auth/signup", user).then(function (res) {
+        $http.post("http://localhost:1407/auth/signup", user).then(function (res, error) {
             swal({
                     title: "Your account is created",
                     icon: "success",
@@ -18,6 +18,12 @@ angular.module('mainApp').controller('registerController', function ($scope, $ht
                         $state.go('login');
                     }
                 });
+        }).catch(function(error){
+            swal({
+                title:"Impossible to register",
+                icon: "error",
+                timer: 3000
+            });
         });
     };
 });

@@ -1,22 +1,11 @@
-<div class="background">
-    <center><img class="logo-JP" src="./docs/logo-jp-avec-ombre.png" alt="Jurassic Park"></center>
-    <h4 class="home-text">An adventure. 6 million years in the making.</h4>
-    <button class="buy-button" ng-click="tickets()"><i class="fas fa-shopping-cart"></i>Buy tickets</button>
-</div>
-<!-- <div class="left-gate"></div>
-<div class="right-gate"></div>
-<button type="submit" class="enter-button">Enter Jurassic Park</button> -->
-<div class="filter"></div>
-<video autoplay muted loop id="myVideo">
-    <source src="../../docs/jurassicpark.mp4" type="video/mp4">
-    Your browser does not support HTML5 video.
-</video>
-<!-- <script>
-    $(document).ready(function(){
-        $(".enter-button").click(function(){
-            $(".left-gate").addClass('slide-left');
-            $(".right-gate").addClass('slide-right');
-            $(this).hide();
-    });
-});
-</script> -->
+<section class="home-section">
+    <div class="background">
+        <center><img class="logo-JP" src="./docs/logo-jp-avec-ombre.png" alt="Jurassic Park"></center>
+        <h4 class="home-text">An adventure. 6 million years in the making.</h4>
+        <button class="buy-button" ng-click="tickets()"><i class="fas fa-shopping-cart"></i>Buy tickets</button>
+    </div>
+    <!-- <video autoplay muted loop id="myVideo">
+        <source src="../../docs/jurassicpark.mp4" type="video/mp4">
+    </video> -->
+    <video src="../../docs/jurassicpark.mp4" id="myVideo" autoplay muted loop></video>
+</section>

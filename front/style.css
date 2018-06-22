@@ -1,7 +1,11 @@
-/* GENERAL */
+/* GENERAL ***********************************************************************************************************************/
+*{
+    margin: none;
+    padding: none;
+}
+
 body{
     font-weight: lighter;
-    position: relative;
 }
 
 h3{
@@ -14,6 +18,7 @@ h3{
 
 .row{
     width: 100%;
+    margin: 0px;
 }
 
 button:focus{
@@ -24,31 +29,37 @@ a:hover{
     text-decoration: none;
 }
 
-.background{
-    overflow: hidden;
-}
 
-/* NAVBAR */
+/* NAVBAR ***********************************************************************************************************************/
 
 nav{
-    box-shadow: 5px 5px 20px black;
-    border-bottom: 2px solid grey;
+    box-shadow: 0px 1px 18px 10px rgba(0,0,0,0.23);
+    background: whitesmoke;
 }
 
-h4.navbar-item{
-    color: white;
-    font-weight: lighter;
+
+
+a.nav-link{
+    color: whitesmoke;
+    font-size: 1rem;
 }
 
-h4.navbar-item:hover{
-    transform: translateX(25px);
-    transition: 1s;
+a.nav-link:hover{
+    transform: scale(1.1);
+    transition: 0.2s;
 }
 
-div.bg-dark{
-    text-align: center;
+a.nav-link:active{
+    color: lightgreen;
 }
-/* HOME VIEW */
+
+
+/* HOME VIEW ********************************************************************************************************************/
+
+.home-section{
+    height: 100vh;
+    overflow: hidden;
+}
 
 .background{
     position: relative;
@@ -66,6 +77,9 @@ div.bg-dark{
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    #myVideo{
+        display: none;
     }
   }
 
@@ -110,9 +124,10 @@ button.buy-button{
     position: absolute;
     right: 0;
     top: 56px;
-    height: auto;
+    height: 100%;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, rgba(255,175,75,1) 0%, rgba(179,39,27,1) 100%);
+    opacity: 0.2;
     z-index: -2;
 }
 
@@ -176,7 +191,7 @@ button.enter-button:hover{
     transition: 5s;
 }
 
-/* TICKETS VIEW */
+/* TICKETS VIEW *******************************************************************************************************************/
 
 .tickets{
     display: block;
@@ -187,95 +202,245 @@ button.enter-button:hover{
     color: gray;
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 720px){
     .tickets{
-    height: 350vh;
+    height: auto;
 }
 }
 
-.tickets-h1{
+.tickets h1{
     text-align: center;
     padding-top: 40px;
     font-weight: lighter;
 }
 
+
+.pass-container{
+    position: relative;
+    background: white; 
+    border: 1px solid white; 
+    border-radius: 10px; 
+    text-align:center; 
+    box-shadow: lightgray 2px 2px 10px; 
+    margin: 20px; 
+    padding: 10px;
+    overflow: hidden;
+}
+
+.pass-container:hover{
+    box-shadow: lightgray 10px 10px 20px !important;
+    transition: 0.3s;
+} 
+
+
 hr{
-    /* background-color: black; */
     height: 1px;
     width: 50%;
     margin-bottom: 40px;
 }
 
 .pass-img{
-    max-height: 30%;
-    max-width: 100%;
-    margin: auto;
-}
 
-.product-1, .product-2, .product-3{ 
+    max-width:100px;
     height: auto;
-    padding-left: 70px;
-    justify-content: center;
-}
-
-@media screen and (max-width: 600px){
-    .product-1, .product-2, .product-3{ 
-        height: auto;
-        width: 100%
-    }
 }
 
 .add-btn{  
     margin-left: auto;
 }
 
-/* THE PARK VIEW */
+/* THE PARK VIEW *****************************************************************************************************************/
 
-.thePark-bg{
-    height: 100vh;
+.thePark{
+    height: 2000px;
     width: 100%;
     overflow: hidden;
-    background-image: url('./docs/background-logo.jpg');
+    background-color: whitesmoke;
+}
+
+.top-image{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100vh;
+    background-image: url('./docs/hawaii-1867849_1920.jpg');
     background-position: center;
     background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    padding: 0px;
+    /* margin-bottom: 30px; */
+}
+
+.top-image h1{
+    padding: 10px;
+    font-size: 6vw;
+    font-weight: lighter;
+    mix-blend-mode: overlay;
+}
+
+.spicies-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url('./docs/JP-Amber.jpg');
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0px 5px 10px grey; 
+    /* filter: grayscale(1); */
+    color: white;
+    text-align: center;
+    text-shadow: 0px 5px 5px black;
+}
+
+.size-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 400px;
+    background-image: url('./docs/Gate_Entrance.jpg');
+    background-position: center;
+    background-size: cover;
+    /* filter: grayscale(1); */
+    box-shadow: 0px 5px 10px grey; 
+    color: white;
+    text-align: center;
+    text-shadow: 0px 5px 5px black;
+}
+
+.circle{
+    display: flex;
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    font-weight: bold;
+    background-color: darkred;
+    border:3px solid yellow;
+    justify-content: center;
+    align-items: center;
+
+
 }
 
 
-/* CART VIEW */
+/* .spicies-container:hover, .size-container:hover{
+filter: none;
+} */
 
-.cart{
-    height: 100vh;
+
+.activities-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    height: 300px;
+    background-color: #343A40;
+    color: whitesmoke;
+    text-shadow: 0px 5px 5px black;
+}
+
+.activities{
     text-align: center;
 }
 
-table{
+.explorer-container{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0px;
+    height: 300px;
+    color: whitesmoke;
+    font-size: 2rem;
+    overflow-wrap: break-word;
+    background-image: url('./docs/Explorer.jpg');
+    background-position: center;
+    background-size: cover;
+}
+
+.explorer-layout{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
     width: 100%;
+    background-color: #343A40;
+    filter: opacity(0.5);
+    z-index: 0;
 }
 
-/* REGISTER VIEW */
 
-section.register{
-    color:black;
+@media screen and (max-width: 720px){
+    .top-image{
+    margin-bottom: 0px;
+    }
+
+    .spicies-container, .size-container{
+        
+    }
+}
+
+/* CART VIEW *********************************************************************************************************************/
+
+.cart{
+    background-color: whitesmoke;
+    height: 700px;
+    text-align: center;
+    color: gray;
+}
+
+@media screen and (max-width: 480px){
+    .cart{
+        height:auto;
+    }
+}
+
+/* LOGIN & REGISTER VIEW ********************************************************************************************************/
+
+.login, .register{ 
     padding-top: 50px;
-    height: 100vh;
-    background-image: url('./docs/background-3.jpg');
+    padding-bottom:50px;
+    height: auto;
+    background-image: url('./docs/hawaii-1867849_1920.jpg');
     background-position: center;
     background-size: cover;
 }
 
 
-/* LOGIN VIEW */
-
-section.login{
-    color:black;
-    padding-top: 50px;
-    height: 100vh;
-    background-image: url('./docs/background-3.jpg');
-    background-position: center;
-    background-size: cover;
+.login-container, .register-container{
+    overflow: hidden; 
+    border-radius: 10px; 
+    height: 500px; 
+    padding: 0px; 
+    box-shadow: black 5px 5px 20px;
+    max-width: 600px;
+    margin: auto;
+    /* -webkit-backdrop-filter: blur(5px); */
+    background-color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    color: gray;
 }
 
-/* FOOTER */
+@media screen and (max-width: 480px){
+    .login-container, .register-container{
+        max-width: 300px;
+        margin: auto;
+    }
+}
+
+
+/* CHECKOUT VIEW ******************************************************************************************************************/
+
+
+section.checkout{
+    background-color: whitesmoke;
+    height: 100vh;
+    
+}
+
+/* FOOTER ************************************************************************************************************************/
 
 footer{
     position: fixed;
@@ -285,15 +450,11 @@ footer{
     align-items: center;
     background-color: #343A40;
     overflow: hidden;
-    border-top: 3px solid grey;
+    border-top: 1px solid lightgray;
 }
 
 p.copyright{
-    color:white;
+    color:whitesmoke;
     font-weight: lighter;
     margin: 10px auto 10px auto ;
-}
-
-div.collapse{
-    color:white;
 }

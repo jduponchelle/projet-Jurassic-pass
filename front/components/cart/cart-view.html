@@ -1,12 +1,12 @@
 <section class="cart container-fluid">
     <div class="row">
-        <h1 class="col-12">Your Jurassic cart</h1>
+        <h1 class="col-12" style="margin-top: 30px; font-weight:  lighter;">Your Jurassic cart</h1>
         <hr>
         <div class="container-fluid myCart col-12">
             <div class="row" ng-repeat="product in myProduct">
                 <div class="col-4">
                     <h3>Title</h3>
-                    <div class="col-12">{{product.title}}><hr>
+                    <div class="col-12">{{product.title}}<hr>
                     </div>
                 </div>
                 <div class="col-4">
@@ -15,7 +15,7 @@
                 </div>
                 <div class="col-4">
                     <h3>Quantity</h3>
-                        <input class="col-8" type="number" ng-model="product.quantity">
+                        <input class="col-md-4" type="number" ng-model="product.quantity" style="text-align: center;">
                         <hr>
                 </div>  
             </div>
@@ -23,7 +23,8 @@
                 <h3>Order total</h3>
                 {{total() | currency}}
             </div>
-            <button type="reset" ng-click="clearCart()" ng-if="myProduct.lenght != 0">Clear cart</button>
+            <button type="reset" ng-click="clearCart()" ng-if="myProduct.lenght != 0" class="btn btn-outline-danger">Clear cart</button>
+            <button type="reset" ng-click="checkout()" ng-if="myProduct.lenght != 0" class="btn btn-outline-success">Checkout</button>
         </div>
     </div>
 </section>
