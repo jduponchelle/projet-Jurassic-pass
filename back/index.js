@@ -2,7 +2,7 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import jwt from 'jsonwebtoken';
 import mongoose from 'mongoose';
-import session from 'express-session';
+
 
 
 import users from './models/user-schema'
@@ -23,10 +23,12 @@ let app = express();
 
 //Connection à la DB avec mongoose
 
-mongoose.connect('mongodb://localhost:27017/jurassicPark', {}).then(
+mongoose.connect('mongodb://admin:willibemen13@ds163610.mlab.com:63610/jurassic-pass', {}).then(
   () => {
     // création du port
-    app.listen('1407', (err) => {
+
+    let port = process.env.PORT || 1407;
+    app.listen(port, (err) => {
       if (err) {
         console.log('Connection to the server failed');
       } else {

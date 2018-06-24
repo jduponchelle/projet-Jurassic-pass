@@ -8,7 +8,7 @@ angular.module('mainApp').controller('registerController', function ($scope, $ht
             username: $scope.username,
             password: $scope.password,
         };
-        $http.post("http://localhost:1407/auth/signup", user).then(function (res, error) {
+        $http.post("https://jurassic-pass.herokuapp.com/auth/signup", user).then(function (res, error) {
             swal({
                     title: "Your account is created",
                     icon: "success",

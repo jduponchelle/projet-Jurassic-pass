@@ -1,10 +1,11 @@
 <div class="col-md-4" ng-repeat="product in productList" style="float: left; height: auto;">
         <div class="pass-container">
+            <div class="pass-hole"></div>
             <h3 class="col-12">{{product.title}}</h3>
-            <img class="pass-img" src="{{product.imagePath}}">
+            <img class="pass-img" src="../../docs/logo-noir.png">
             <p class="col-12">{{product.description}}</p>
             <p class="col-12">{{product.price | currency}}</p>
-            <button class="btn btn-outline-success" ng-click="addToCart()">Add to cart</button>
+            <button class="btn btn-outline-warning" ng-click="addToCart()">Add to cart</button>
         </div>
     </div>
 </div>

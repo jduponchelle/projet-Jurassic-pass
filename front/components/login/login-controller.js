@@ -9,7 +9,7 @@ angular.module('mainApp').controller('loginController', function($scope, $http, 
 
         
 
-        $http.post("http://localhost:1407/login", user).then(function (res) {
+        $http.post("https://jurassic-pass.herokuapp.com/login", user).then(function (res) {
             let token = res.data.content;
             sessionStorage.setItem('token', token);
             $state.reload();

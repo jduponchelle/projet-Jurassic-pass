@@ -1,7 +1,7 @@
 angular.module('mainApp').controller('passController', function ($scope, $http, $state) {
 
     function _showProduct() {
-        $http.get("http://localhost:1407/showProducts").then(function (res) {
+        $http.get("https://jurassic-pass.herokuapp.com/showProducts").then(function (res) {
             $scope.productList = res.data.content
             console.log(res.data.content);
         })
@@ -28,7 +28,7 @@ angular.module('mainApp').controller('passController', function ($scope, $http, 
             title: this.product.title
         };
 
-        $http.post("http://localhost:1407/addToCart", productTitle).then(function (res) {
+        $http.post("https://jurassic-pass.herokuapp.com/addToCart", productTitle).then(function (res) {
 
             // GET THE SESSION STORAGE ARRAY AND PARSE IT
             let products = JSON.parse(sessionStorage.getItem('sessionCart'));
