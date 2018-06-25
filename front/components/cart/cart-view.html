@@ -1,26 +1,24 @@
 <section class="cart container-fluid">
-    <div class="row">
-        <h1 class="col-12" style="margin-top: 30px; font-weight:  lighter;">Your Jurassic cart</h1>
-        <hr>
+    <div class="row justify-content-center">
+        <h1 class="col-12">Your Jurassic cart</h1>
+        <h3 class="col-4">Title</h3>
+        <h3 class="col-4">Price</h3>
+        <h3 class="col-4">Quantiy</h3>
         <div class="container-fluid myCart col-12">
-            <div class="row" ng-repeat="product in myProduct">
+            <div class="row justify-content-center" ng-repeat="product in myProduct">
                 <div class="col-4">
-                    <h3>Title</h3>
-                    <div class="col-12">{{product.title}}<hr>
-                    </div>
+                    <p>{{product.title}}</p>
                 </div>
                 <div class="col-4">
-                    <h3>Price</h3>
-                    <div class="col-12">{{product.price | currency}}<hr></div>
+                    <p>{{product.price | currency}}</p>
                 </div>
                 <div class="col-4">
-                    <h3>Quantity</h3>
-                        <input class="col-md-4" type="number" ng-model="product.quantity" style="text-align: center;">
-                        <hr>
+                    <input class="col-md-4" type="number" ng-model="product.quantity" style="text-align: center;">
                 </div>  
             </div>
-            <div class="col-3 offset-9">
-                <h3>Order total</h3>
+            <hr>
+            <div class="col-12 total">
+                <h3>Total Order</h3>
                 {{total() | currency}}
             </div>
             <button type="reset" ng-click="clearCart()" ng-if="myProduct.lenght != 0" class="btn btn-outline-danger">Clear cart</button>

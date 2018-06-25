@@ -17,14 +17,6 @@ angular.module('mainApp').controller('cartController', function ($scope, $http, 
         return total;
     };
 
-
-    // function _removeItem(index){
-    //         myProduct.splice(index, 1);
-    //         sessionStorage.setItem('sessionCart', JSON.stringify(myProduct));
-    //         $state.reload();
-    // }
-
-
     function _clearCart(){
         swal({
             title: "Are you sure to clear cart ?", 
@@ -63,7 +55,16 @@ angular.module('mainApp').controller('cartController', function ($scope, $http, 
                 icon: "info",
                 timer: 3000
             })
-        }else{
+        }
+        
+        if(!sessionStorage.token){
+            swal({
+                title: "You should be authendified to proceed checkout!",
+                icon: "error",
+                titmer:3000
+            })
+        }
+        else{
             $state.go('checkout');
         }
     }
